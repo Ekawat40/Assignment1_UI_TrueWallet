@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component } from "react";
 import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native";
-
+import LineItem from "../pages/LineItem";
 import { Header } from "react-native-elements";
 const rows = ["Banana", "Apple", "Cherry", "Mango", "Lime"];
 
@@ -31,6 +31,18 @@ class PromotionsScreen extends Component {
               style: { fontSize: 15, color: "black" }
             }}
           />
+        </View>
+        <View>
+          <ScrollView>
+            <LineItem source={require("../Image/promotion1.png")} />
+            <LineItem source={require("../Image/promotion2.png")} />
+            <LineItem source={require("../Image/promotion3.png")} />
+            <LineItem source={require("../Image/promotion4.png")} />
+            <LineItem source={require("../Image/promotion1.png")} />
+            <LineItem source={require("../Image/promotion2.png")} />
+            <LineItem source={require("../Image/promotion3.png")} />
+            <LineItem source={require("../Image/promotion4.png")} />
+          </ScrollView>
         </View>
       </View>
     );

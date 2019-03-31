@@ -22,7 +22,7 @@ const TabNavigator = createBottomTabNavigator(
     Promotions: {
       screen: PromotionsScreen
     },
-    List: {
+    รายการ: {
       screen: ListScreen
     },
     Profile: {
@@ -40,7 +40,7 @@ const TabNavigator = createBottomTabNavigator(
           iconName = `ios-home`;
         } else if (routeName === "Promotions") {
           iconName = `md-pricetag`;
-        }else if(routeName === "List"){
+        }else if(routeName === "รายการ"){
             iconName = `ios-list`;
         }else if(routeName === "Profile"){
             iconName = `md-person`;
