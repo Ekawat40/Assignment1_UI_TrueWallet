@@ -14,7 +14,7 @@ class LineItem extends Component {
     let name = this.props.name;
     return (
       <View style={styles.container}>
-        <View style={styles.test}>
+        <View>
           <Image style={styles.picture} source={this.props.source} />
         </View>
       </View>
@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+ 
   },
   menu: {
     height: 50,
@@ -46,9 +47,7 @@ const styles = StyleSheet.create({
     width: 320,
     resizeMode: 'stretch'
   },
-  test: {
-    flex: 1
-  }
+
 });
 
 //make this component available to the app
