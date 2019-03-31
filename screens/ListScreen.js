@@ -45,6 +45,7 @@
 
 //This is an example of React Native Tab
 import React from 'react';
+
 //import react in our code.
 //For React Navigation Version 2+
 //import {createStackNavigator, createMaterialTopTabNavigator} from 'react-navigation';
@@ -58,10 +59,12 @@ import {
  
 import FirstPage from '../pages/FirstPage';
 import SecondPage from '../pages/SecondPage';
-
+import { Header } from "react-native-elements";
 //Making TabNavigator which will be called in App StackNavigator
 //we can directly export the TabNavigator also but header will not be visible
 //as header comes only when we put anything into StackNavigator and then export
+
+
 const TabScreen = createMaterialTopTabNavigator(
   {
     รายการล่าสุด: { screen: FirstPage },
@@ -87,6 +90,17 @@ const TabScreen = createMaterialTopTabNavigator(
     },
   }
 );
+
+class HomeScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Text>Home Screen</Text>
+      </View>
+    );
+  }
+}
+
  
 //making a StackNavigator to export as default
 const App = createStackNavigator({
