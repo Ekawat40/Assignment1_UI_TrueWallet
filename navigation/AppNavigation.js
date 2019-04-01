@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   createStackNavigator,
@@ -13,22 +13,48 @@ import HomeScreen from "../screens/HomeScreen";
 import PromotionsScreen from "../screens/PromotionsScreen";
 import ListScreen from "../screens/ListScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import PersonInfo from "../screens/PersonInfo";
 
-const TabNavigator = createBottomTabNavigator(
+
+
+const HomeScreenS = createStackNavigator(
   {
     Home: {
       screen: HomeScreen
     },
-    Promotions: {
-      screen: PromotionsScreen
-    },
-    รายการ: {
-      screen: ListScreen
-    },
-    Profile: {
-      screen: ProfileScreen
-    },
-    
+  }
+);
+
+const PromotionsS = createStackNavigator({
+  Promotions: {
+    screen: PromotionsScreen
+  }
+});
+
+const ListScreenS = createStackNavigator({
+  รายการ: {
+    screen: ListScreen,
+    navigationOptions: {
+      header: null
+    }
+  }
+});
+
+const ProfileScreenS = createStackNavigator({
+  Profile: {
+    screen: ProfileScreen
+  },
+  PersonInfo: {
+    screen: PersonInfo
+  }
+});
+
+const TabNavigator = createBottomTabNavigator(
+  {
+    หน้าหลัก: HomeScreenS,
+    โปรโมชั่น: PromotionsS,
+    รายการ: ListScreenS,
+    ฉัน: ProfileScreenS
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -36,16 +62,15 @@ const TabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let IconComponent = Ionicons;
         let iconName;
-        if (routeName === "Home") {
+        if (routeName === "หน้าหลัก") {
           iconName = `ios-home`;
-        } else if (routeName === "Promotions") {
+        } else if (routeName === "โปรโมชั่น") {
           iconName = `md-pricetag`;
-        }else if(routeName === "รายการ"){
-            iconName = `ios-list`;
-        }else if(routeName === "Profile"){
-            iconName = `md-person`;
+        } else if (routeName === "รายการ") {
+          iconName = `ios-list`;
+        } else if (routeName === "ฉัน") {
+          iconName = `md-person`;
         }
-
 
         // You can return any component that you like here!
         return <IconComponent name={iconName} size={25} color={tintColor} />;

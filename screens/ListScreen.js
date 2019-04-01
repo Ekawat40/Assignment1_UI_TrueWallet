@@ -56,7 +56,7 @@ import {
   createAppContainer,
 } from 'react-navigation';
 //import Navigator in our project
- 
+import { View, Text, StyleSheet, Image, ScrollView ,TouchableOpacity} from "react-native";
 import FirstPage from '../pages/FirstPage';
 import SecondPage from '../pages/SecondPage';
 import { Header } from "react-native-elements";
@@ -91,15 +91,6 @@ const TabScreen = createMaterialTopTabNavigator(
   }
 );
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
-      </View>
-    );
-  }
-}
 
  
 //making a StackNavigator to export as default
@@ -110,7 +101,7 @@ const App = createStackNavigator({
       headerStyle: {
         backgroundColor: '#FFFFFF',
       },
-      headerTintColor: '#000000',
+      headerTintColor: '# ',
       title: 'รายการ',
     },
     

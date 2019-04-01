@@ -20,17 +20,27 @@ class UserInfo extends Component {
                     </View>
                 </View>
                 <View style={styles.subContainerRight}>
-                    <Text style={[styles.font, {fontSize: 19}]}> {this.props.name} </Text>
-                    <Text style={[styles.font, {fontSize: 16}]}> TrueMoney Account </Text>
+                    <Text style={[styles.font, {fontSize: 19 ,fontWeight: "bold",}]}> {this.props.name} </Text>
+                    <Text style={[styles.font, {fontSize: 16,color: "#FF8300",}]}> TrueMoney Account </Text>
+                    <View style={{flexDirection:'row'}}> 
+                    <Image style={{ width: 18, height: 18 }} source={require("../../assets/ProfileScreen/User/email.png")}/>
                     <Text style={[styles.font, {fontSize: 16}]}> {this.props.email} </Text>
-                    <Text style={[styles.font, {fontSize: 16}]}> {this.props.tel} </Text>
-                    <Text style={[styles.font, {fontSize: 16}]}> อี-วอลเล็ท พร้อมเพย์ เริ่มต้นใช้งาน </Text>
-                    <Text style={styles.spec}> </Text>
+                    </View>
+                    <View style={{flexDirection:'row'}}> 
+                    <Image style={{ width: 18, height: 18 }} source={require("../../assets/ProfileScreen/User/phone.png")}/>
+                    <Text style={[styles.font, {fontSize: 16}]}> {this.props.tel} </Text></View>
+                    <View style={{flexDirection:'row'}}>
+                    <Image style={{ width: 18, height: 18 }} source={require("../../assets/ProfileScreen/User/wallet.png")}/>
+                    <Text style={[styles.font, {fontSize: 16}]}> อี-วอลเล็ท พร้อมเพย์ </Text>
+                    <Text style={[styles.font, {fontSize: 16,color: "#FF8300",}]}>เริ่มต้นใช้งาน</Text>
+                    <Text style={styles.spec}> </Text></View>
                 </View>
             </View>
         );
     }
 }
+
+// C6C6C6
 
 // define your styles
 const styles = StyleSheet.create({

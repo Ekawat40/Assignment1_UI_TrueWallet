@@ -1,6 +1,13 @@
 //import liraries
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TouchableOpacity
+} from "react-native";
 import { Header } from "react-native-elements";
 import { ListItem } from "react-native-elements";
 import Logout from "../pages/ProfileScreen/Logout";
@@ -17,21 +24,24 @@ const list = [
 ];
 class ProfileScreen extends Component {
   static navigationOptions = {
-    title: "ฉัน"
+    headerTitle: (
+      <Text
+        style={{
+          color: "#FF8300",
+          fontWeight: "bold",
+          fontSize: 18,
+          padding: 15,
+          textAlign: "center"
+        }}
+      >
+        ฉัน
+      </Text>
+    )
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <View>
-          <Header
-            backgroundColor="white"
-            leftComponent={{
-              text: "ฉัน",
-              style: { fontSize: 15, color: "black" }
-            }}
-          />
-        </View>
         <ScrollView>
           <User
             userIcon={require("../assets/ProfileScreen/User/user.png")}
@@ -46,27 +56,70 @@ class ProfileScreen extends Component {
           <View>
             <Text style={styles.spec}> </Text>
           </View>
-          <List1 />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/Untitled.png")}
+            menu={"ยอดเงินในวอลเล็ท"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/เงินคืนจากทรูมูฟเอช.png")}
+            menu={"เงินคืนจากรูมูฟเอช"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/ยืนยันตัวตน.png")}
+            menu={"ยืนยันตัวตน"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/บัตรของฉัน.png")}
+            menu={"บัตรของฉัน"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/WeCard.png")}
+            menu={"WeCard"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/บริการที่เชื่อมต่อ.png")}
+            menu={"บริการที่เชื่อมต่อ"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/QRcode.png")}
+            menu={"QR Code ของฉัน"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/ตั้งรหัส.png")}
+            menu={"ตั้งค่ารหัสผ่าน, PIN, Fingerprint"}
+          />
+
           <View>
             <Text style={styles.spec}> </Text>
           </View>
-          <View style={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
-            {list.map((item, i) => (
-              <ListItem
-                key={i}
-                title={item.title}
-                leftIcon={{ name: item.icon }}
-              />
-            ))}
-          </View>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("PersonInfo")}
+          >
+            <List1
+              menuicon={require("../assets/ProfileScreen/User/menu/ติดต่อ.png")}
+              menu={"ติดต่อ TrueMoney Customer Care"}
+            />
+          </TouchableOpacity>
           <View>
             <Text style={styles.spec}> </Text>
           </View>
-          <List2 />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/คำถาม.png")}
+            menu={"คำถามที่พบบ่อย"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/เงินคืนจากทรูมูฟเอช.png")}
+            menu={"ตั้งค่ารหัสผ่าน, PIN, Fingerprint"}
+          />
+          <List1
+            menuicon={require("../assets/ProfileScreen/User/menu/เกี่ยวกับ.png")}
+            menu={"เกี่ยวกับทรูมันนี่"}
+          />
+
           <View>
             <Text style={styles.spec}> </Text>
           </View>
-          <Logout/>
+          <Logout />
         </ScrollView>
       </View>
     );

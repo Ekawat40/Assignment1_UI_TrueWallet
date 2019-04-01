@@ -11,33 +11,33 @@ class MenuHighlight extends Component {
 
         <View>
           <ScrollView horizontal={true}>
-          <View style={{flexDirection:'column'}}>
+          <View style={{flexDirection:'column',padding:10}}>
           <Image
-              style={{ width: 50, height: 50 }}
-              source={require("../../assets/ProfileScreen/User/user.png")}
+              style={{ width: 55, height: 55 }}
+              source={require("../../assets/HomeScreen/icon/logo1.png")}
             />
             <View>
             <Text>จ่ายที่7-Eleven</Text>
             </View>
           </View>
-          <View style={{flexDirection:'column'}}>
+          <View style={{flexDirection:'column',padding:10}}>
           <Image
-              style={{ width: 50, height: 50 }}
-              source={require("../../assets/ProfileScreen/User/user.png")}
+              style={{ width: 55, height: 55 }}
+              source={require("../../assets/HomeScreen/icon/logo2.png")}
             />
              <Text>เชื่อมต่อGoogle Play</Text>
           </View>
-          <View style={{flexDirection:'column'}}>
+          <View style={{flexDirection:'column',padding:10}}>
           <Image
-              style={{ width: 50, height: 50 }}
-              source={require("../../assets/ProfileScreen/User/user.png")}
+              style={{ width: 55, height: 55 }}
+              source={require("../../assets/HomeScreen/icon/logo3.png")}
             />
             <Text>เล็งไก่ให้ดีตีได้เลย</Text>
           </View>
-          <View style={{flexDirection:'column'}}>
+          <View style={{flexDirection:'column',padding:10}}>
           <Image
               style={{ width: 50, height: 50 }}
-              source={require("../../assets/ProfileScreen/User/user.png")}
+              source={require("../../assets/HomeScreen/icon/logo4.png")}
             />
             <Text>TruePointของฉัน</Text>
           </View>

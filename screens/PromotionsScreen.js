@@ -8,7 +8,14 @@ const rows = ["Banana", "Apple", "Cherry", "Mango", "Lime"];
 // create a component
 class PromotionsScreen extends Component {
   static navigationOptions = {
-    title: "โปรโมชั่น"
+    headerTitle: (
+      <Text style={{
+         color: "#FF8300",
+         fontWeight: 'bold',
+         fontSize: 18,
+         padding: 15 
+      }}>โปรโมชั่น</Text>
+    )
   };
 
   renderItem = ({ item }) => {
@@ -23,7 +30,7 @@ class PromotionsScreen extends Component {
         data={rows}
         renderItem={this.renderItem}
       /> */}
-        <View>
+        {/* <View>
           <Header
             backgroundColor="white"
             leftComponent={{
@@ -31,7 +38,7 @@ class PromotionsScreen extends Component {
               style: { fontSize: 15, color: "black" }
             }}
           />
-        </View>
+        </View> */}
         <View>
           <ScrollView>
             <LineItem source={require("../Image/promotion1.png")} />
