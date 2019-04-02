@@ -10,8 +10,9 @@ class MenuBalance extends Component {
         <View style={{flex: 1}}>
           <Text style={[styles.font, { fontSize: 16 }]}>ยอดเงินคงเหลือ</Text>
         </View>
-        <View style={{flex: 1}}>
-          <Text style={[styles.font, { fontSize: 16 }, { textAlign: "right" }]}> {this.props.money} ฿ </Text>
+        <View style={{flex: 1,flexDirection:'row',alignItem:'flex-end',}}>
+          <Text style={[styles.font, { fontSize: 16 } ,{fontWeight: "bold"},{color: "#FF8300"}]}> {this.props.money}</Text>
+          <Text style={[styles.font, { fontSize: 16 },{fontWeight: "bold"}]}> ฿ </Text>
         </View>
       </View>
     );

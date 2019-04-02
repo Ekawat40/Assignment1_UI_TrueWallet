@@ -10,10 +10,11 @@ class PromotionsScreen extends Component {
   static navigationOptions = {
     headerTitle: (
       <Text style={{
-         color: "#FF8300",
+         color: "#000000",
          fontWeight: 'bold',
          fontSize: 18,
-         padding: 15 
+         padding: 15 ,
+         textAlign: "center"
       }}>โปรโมชั่น</Text>
     )
   };
@@ -25,20 +26,6 @@ class PromotionsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <FlatList
-        style={styles.container}
-        data={rows}
-        renderItem={this.renderItem}
-      /> */}
-        {/* <View>
-          <Header
-            backgroundColor="white"
-            leftComponent={{
-              text: "โปรโมชั่น",
-              style: { fontSize: 15, color: "black" }
-            }}
-          />
-        </View> */}
         <View>
           <ScrollView>
             <LineItem source={require("../Image/promotion1.png")} />

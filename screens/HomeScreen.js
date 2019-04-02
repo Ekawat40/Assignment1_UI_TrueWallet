@@ -5,6 +5,7 @@ import { Header, Button } from "react-native-elements";
 import LineItem from "../pages/LineItem";
 import MenuHighlight from "../pages/HomeScreen/MenuHighlight";
 
+
 // create a component
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -26,14 +27,6 @@ class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <View>
-            <Header
-              backgroundColor="white"
-              leftComponent={{
-                style: { fontSize: 15, color: "black" }
-              }}
-            />
-          </View> */}
         <ScrollView>
           <View
             style={{
@@ -174,7 +167,7 @@ class HomeScreen extends Component {
               <View>
                 <Text style={styles.spec}> </Text>
               </View>
-              <MenuHighlight />
+              <MenuHighlight/>
               <View>
                 <Text style={styles.spec}> </Text>
               </View>

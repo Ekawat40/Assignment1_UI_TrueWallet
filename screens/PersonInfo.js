@@ -7,11 +7,15 @@ import {
   Image,
   TextInput,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  StatusBar
 } from "react-native";
 import { Button } from "react-native-elements";
+import FloatingLabelInput from "../pages/TransferMoneyScreen/FloatingLabelInput ";
 // create a component โอนเงินเข้าบัญชีธนาคาร
 class PersonInfo extends Component {
+  handleTextChange = newText => this.setState({ value: newText });
+
   static navigationOptions = {
     headerTitle: (
       <Text
@@ -21,6 +25,7 @@ class PersonInfo extends Component {
           fontSize: 18,
           padding: 15,
           textAlign: "center"
+          
         }}
       >
         โอนเงินเข้าบัญชีธนาคาร
@@ -48,20 +53,38 @@ class PersonInfo extends Component {
             โอนเงินจากทรูมันนี่ วอลเล็ทเข้าบัญชีได้ง่ายๆ
           </Text>
         </View>
-        <TouchableOpacity style={{ paddingTop:5 ,paddingLeft:10 }}>
-          <Text  style={[styles.font, { fontSize: 16 }]}>ธนาคารปลายทาง                                      ></Text>
+        <TouchableOpacity>
+          <View
+            style={{
+              marginLeft: 50,
+              marginRight: 50,
+              marginTop: 10,
+              marginBottom: 10
+            }}
+          >
+            <View style={{ flexDirection: "row" }}>
+              <Text style={[styles.font, { fontSize: 16 },{paddingTop:10}]}>ธนาคารปลายทาง</Text>
+              <Image
+                style={{ width: 20, height: 20, marginLeft: 100 }}
+                source={require("../assets/ProfileScreen/User/Transfer/arrow.png")}
+              />
+            </View>
+          </View>
         </TouchableOpacity>
+        <View style={{ padding:10 ,marginLeft:50,marginRight:50}}>
+            <FloatingLabelInput
+              label="เลขที่บัญชี"
+              value={this.props.value}
+              onChangeText={this.handleTextChange}
+            />
 
-        <View>
-          <TextInput
-            style={{paddingTop:5, height: 40, borderColor: "gray", borderWidth: 1 }}
-          />
-        </View>
-        <View>
-          <TextInput
-            style={{ paddingTop:5,height: 40, borderColor: "gray", borderWidth: 1 }}
-          />
-        </View>
+            <FloatingLabelInput
+              label="เลขที่บัญชี"
+              value={this.props.value}
+              onChangeText={this.handleTextChange}
+            />
+          </View>
+       
         <View>
           <Text
             style={[
@@ -107,10 +130,12 @@ class PersonInfo extends Component {
           style={{
             width: 225,
             height: 150,
-            justifyContent: "center",
-            alignItems: "center"
+            paddingTop:10,
+            marginLeft: "auto",
+            marginRight: "auto"
           }}
         >
+         
           <Button disabled={true} title="โอนเงินเข้าบัญชีธนาคาร" />
         </View>
       </View>

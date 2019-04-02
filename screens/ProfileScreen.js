@@ -16,22 +16,19 @@ import List2 from "../pages/ProfileScreen/List2";
 import User from "../pages/ProfileScreen/User";
 import MenuBalance from "../pages/ProfileScreen/MenuBalance";
 // create a component
-const list = [
-  {
-    title: "โอนเงินเข้าบัญชีธนาคาร",
-    icon: "person"
-  }
-];
+
 class ProfileScreen extends Component {
   static navigationOptions = {
+    headerTitleStyle: { alignSelf: 'center' },
     headerTitle: (
       <Text
         style={{
-          color: "#FF8300",
+          color: "#000000",
           fontWeight: "bold",
           fontSize: 18,
           padding: 15,
-          textAlign: "center"
+          textAlign: "center",
+        
         }}
       >
         ฉัน
@@ -96,20 +93,20 @@ class ProfileScreen extends Component {
             onPress={() => this.props.navigation.navigate("PersonInfo")}
           >
             <List1
-              menuicon={require("../assets/ProfileScreen/User/menu/ติดต่อ.png")}
-              menu={"ติดต่อ TrueMoney Customer Care"}
+              menuicon={require("../assets/ProfileScreen/User/menu/โอนเงิน.png")}
+              menu={"โอนเงินเข้าบัญชีธนาคาร"}
             />
           </TouchableOpacity>
           <View>
             <Text style={styles.spec}> </Text>
           </View>
           <List1
-            menuicon={require("../assets/ProfileScreen/User/menu/คำถาม.png")}
-            menu={"คำถามที่พบบ่อย"}
+            menuicon={require("../assets/ProfileScreen/User/menu/ติดต่อ.png")}
+            menu={"ติดต่อ TrueMoney Customer Care"}
           />
           <List1
-            menuicon={require("../assets/ProfileScreen/User/menu/เงินคืนจากทรูมูฟเอช.png")}
-            menu={"ตั้งค่ารหัสผ่าน, PIN, Fingerprint"}
+            menuicon={require("../assets/ProfileScreen/User/menu/คำถาม.png")}
+            menu={"คำถามที่พบบ่อย"}
           />
           <List1
             menuicon={require("../assets/ProfileScreen/User/menu/เกี่ยวกับ.png")}

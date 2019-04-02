@@ -57,8 +57,8 @@ import {
 } from 'react-navigation';
 //import Navigator in our project
 import { View, Text, StyleSheet, Image, ScrollView ,TouchableOpacity} from "react-native";
-import FirstPage from '../pages/FirstPage';
-import SecondPage from '../pages/SecondPage';
+import LastItem from '../pages/LastItem';
+import FavoriteItem from '../pages/FavoriteItem';
 import { Header } from "react-native-elements";
 //Making TabNavigator which will be called in App StackNavigator
 //we can directly export the TabNavigator also but header will not be visible
@@ -67,8 +67,8 @@ import { Header } from "react-native-elements";
 
 const TabScreen = createMaterialTopTabNavigator(
   {
-    รายการล่าสุด: { screen: FirstPage },
-    รายการโปรด: { screen: SecondPage },
+    รายการล่าสุด: { screen: LastItem },
+    รายการโปรด: { screen: FavoriteItem },
   },
   {
     tabBarPosition: 'top',
@@ -100,10 +100,11 @@ const App = createStackNavigator({
     navigationOptions: {
       headerStyle: {
         backgroundColor: '#FFFFFF',
+        color:'#FF8300'
       },
-      headerTintColor: '# ',
       title: 'รายการ',
-    },
+    
+    }
     
   },
 });
@@ -115,3 +116,5 @@ const App = createStackNavigator({
 //export default App;
 //For React Navigation Version 3+
 export default createAppContainer(App);
+
+
